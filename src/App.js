@@ -51,7 +51,7 @@ class App extends Component {
             <div className="row justify-content-center mt-4">
               <div className="col-6">
                 <div class="card">
-                  <div class="card-header h4 text-secondary">Todo List</div>
+                  <div class="card-header bg-secondary h4 text-light">Todo List</div>
                   <ul class="list-group list-group-flush">
                     {itemList}
                   </ul>
