@@ -31,10 +31,10 @@ class App extends Component {
                     <li class="list-group-item">
                       <div className="d-flex justify-content-between">
                           <div className="d-flex flex-column">
-                            <span>Hello</span>
+                            <span>Learning React JS with VSCode</span>
                             <span>Again</span>
                           </div>
-                          <span>World</span>
+                          <span>close</span>
                       </div>
                     </li>
                   </ul>
