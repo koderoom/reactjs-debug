@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
-import moment from 'moment'
+import moment from 'moment';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
+
 import './App.css';
 
 class App extends Component {
   constructor(props){
     super(props);
+
+    let title = "React JS Debugging";
 
     let todoList = [];
     todoList.push({'data':'Learn React JS debugging in VSCode Editor', 'ts' : new Date()});
@@ -12,7 +18,7 @@ class App extends Component {
     todoList.push({'data':'Learn React Native debugging in VSCode Editor', 'ts' : new Date()});
     todoList.push({'data':'Learn React Native debugging in Chrome Dev Tools', 'ts' : new Date()});
 
-    this.state = {'todoList' : todoList};
+    this.state = {'title':title, 'todoList' : todoList};
   }
 
   render() {
@@ -23,7 +29,7 @@ class App extends Component {
               <span>{item.data}</span>
               <span style={{fontSize:'x-small'}}>{moment(item.ts).format('YYYY-MM-DD HH:mm:ss')}</span>
             </div>
-            <span>Remove</span>
+            <FontAwesomeIcon icon={faTrashAlt} size="lg" color='red' style={{opacity:'.7'}}/>
         </div>
       </li>
     );
@@ -31,7 +37,7 @@ class App extends Component {
     return (
       <React.Fragment>
         <nav className="navbar navbar-dark bg-dark">
-          <a className="navbar-brand" style={{fontWeight:'bold'}} href="#">ReactJS Debug</a>
+          <a className="navbar-brand" style={{fontWeight:'bold'}} href="#">{this.state.title}</a>
         </nav>
 
         <div className="container-fluid">
