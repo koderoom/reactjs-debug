@@ -18,14 +18,26 @@ class App extends Component {
     todoList.push({'data':'Learn React Native debugging in VSCode Editor', 'ts' : new Date()});
     todoList.push({'data':'Learn React Native debugging in Chrome Dev Tools', 'ts' : new Date()});
 
-    this.state = {'title':title, 'todoList' : todoList};
+    this.state = {'title':title, 'todoList' : todoList, 'newTodo':''};
     
     // Event binding
+    this.handleChange = this.handleChange.bind(this);
     this.addNewTodo = this.addNewTodo.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({'newTodo': event.target.value});
   }
 
   addNewTodo() {
     console.log(moment().toDate());
+
+    if(this.state.newTodo.length > 0) {
+      let newTodo = {'data' : this.state.newTodo, 'ts': new Date()};
+      this.state.todoList.splice(0, 0, newTodo);
+
+      this.setState({'newTodo': ''});
+    }
   }
 
   render() {
@@ -52,7 +64,7 @@ class App extends Component {
                 <div className="col-6 rounded">
                     <div className="card">
                       <div className="card-body bg-secondary d-flex justify-content-center align-items-center">
-                          <input className="form-control form-control-lg col-9 mr-1" type="text" placeholder="Add New Todo" />
+                          <input value={this.state.newTodo} onChange={this.handleChange} className="form-control form-control-lg col-9 mr-1" type="text" placeholder="Add New Todo" />
                           <button type="button" className="btn btn-lg btn-secondary" onClick={this.addNewTodo}>Add Todo</button>
                       </div>
                     </div>
