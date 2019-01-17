@@ -23,6 +23,7 @@ class App extends Component {
     // Event binding
     this.handleChange = this.handleChange.bind(this);
     this.addNewTodo = this.addNewTodo.bind(this);
+    this.removeTodo = this.removeTodo.bind(this);
   }
 
   handleChange(event) {
@@ -30,14 +31,21 @@ class App extends Component {
   }
 
   addNewTodo() {
-    console.log(moment().toDate());
+    console.log('Add', new Date());
 
     if(this.state.newTodo.length > 0) {
       let newTodo = {'data' : this.state.newTodo, 'ts': new Date()};
       this.state.todoList.splice(0, 0, newTodo);
 
-      this.setState({'newTodo': ''});
+      this.setState({'newTodo': '', 'todoList' : this.state.todoList});
     }
+  }
+
+  removeTodo(index) {
+    console.log('Remove', index, new Date());
+
+    this.state.todoList.splice(index, 1);
+    this.setState({'todoList' : this.state.todoList});
   }
 
   render() {
@@ -48,7 +56,7 @@ class App extends Component {
               <span className='text-capitalize'>{item.data}</span>
               <span style={{fontSize:'x-small'}}>{moment(item.ts).format('YYYY-MM-DD HH:mm:ss')}</span>
             </div>
-            <FontAwesomeIcon icon={faTrashAlt} size="lg" color='red' style={{opacity:'.7', cursor:'pointer'}}/>
+            <FontAwesomeIcon onClick={()=>{this.removeTodo(index)}} icon={faTrashAlt} size="lg" color='red' style={{opacity:'.7', cursor:'pointer'}}/>
         </div>
       </li>
     );
