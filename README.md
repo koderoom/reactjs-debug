@@ -1,2 +1,2 @@
-# READ ME
-* (https://facebook.github.io/create-react-app/docs/deployment#step-1-add-homepage-to-packagejson)[https://facebook.github.io/create-react-app/docs/deployment#step-1-add-homepage-to-packagejson]
+# NOTES
+* [https://facebook.github.io/create-react-app/docs/deployment#step-1-add-homepage-to-packagejson](https://facebook.github.io/create-react-app/docs/deployment#step-1-add-homepage-to-packagejson)
