@@ -30,3 +30,8 @@
     transform: rotate(360deg);
   }
 }
+
+.slow-spin {
+  -webkit-animation: fa-spin 4s infinite linear;
+  animation: fa-spin 4s infinite linear;
+}

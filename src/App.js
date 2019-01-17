@@ -3,6 +3,7 @@ import moment from 'moment';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
+import {faReact} from '@fortawesome/free-brands-svg-icons';
 
 import './App.css';
 
@@ -64,7 +65,10 @@ class App extends Component {
     return (
       <React.Fragment>
         <nav className="navbar navbar-dark bg-dark">
-          <a className="navbar-brand" style={{fontWeight:'bold'}} href="#">{this.state.title}</a>
+          <div>
+            <FontAwesomeIcon icon={faReact} size="lg" color="white" className="slow-spin" />
+            <a className="ml-1 navbar-brand" style={{fontWeight:'bold'}} href="#">{this.state.title}</a>
+          </div>
         </nav>
 
         <div className="container-fluid">
