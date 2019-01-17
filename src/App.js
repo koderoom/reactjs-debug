@@ -31,6 +31,9 @@ class App extends Component {
     this.setState({'newTodo': event.target.value});
   }
 
+  /**
+   * ADD NEW TODO TASK
+   */
   addNewTodo() {
     console.log('Add', new Date());
 
@@ -42,6 +45,10 @@ class App extends Component {
     }
   }
 
+  /**
+   * Remove a task.
+   * @param {*} index 
+   */
   removeTodo(index) {
     console.log('Remove', index, new Date());
 
@@ -49,6 +56,10 @@ class App extends Component {
     this.setState({'todoList' : this.state.todoList});
   }
 
+
+  /**
+   * UI RENDERING COMPONENT
+   */
   render() {
     const itemList = this.state.todoList.map((item, index)=>
       <li className="list-group-item" key={index}>
@@ -97,6 +108,9 @@ class App extends Component {
             </div>
         </div>
 
+        <nav className="navbar navbar-dark bg-dark justify-content-center text-light fixed-bottom">
+            Made with Love <span className="ml-1"> &hearts;</span>
+        </nav>
       </React.Fragment>
     );
   }
