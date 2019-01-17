@@ -45,7 +45,7 @@ class App extends Component {
       <li className="list-group-item" key={index}>
         <div className="d-flex justify-content-between">
             <div className="d-flex flex-column">
-              <span>{item.data}</span>
+              <span className='text-capitalize'>{item.data}</span>
               <span style={{fontSize:'x-small'}}>{moment(item.ts).format('YYYY-MM-DD HH:mm:ss')}</span>
             </div>
             <FontAwesomeIcon icon={faTrashAlt} size="lg" color='red' style={{opacity:'.7', cursor:'pointer'}}/>
