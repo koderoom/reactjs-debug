@@ -1,10 +1,18 @@
 import React, { Component } from 'react';
+import moment from 'moment'
 import './App.css';
 
 class App extends Component {
   constructor(props){
     super(props);
-    this.state = {'todoList' : [1, 2, 3, 4, 5]};
+
+    let todoList = [];
+    todoList.push({'data':'Learn React JS debugging in VSCode Editor', 'ts' : new Date()});
+    todoList.push({'data':'Learn React JS debugging in Chrome Dev Tools', 'ts' : new Date()});
+    todoList.push({'data':'Learn React Native debugging in VSCode Editor', 'ts' : new Date()});
+    todoList.push({'data':'Learn React Native debugging in Chrome Dev Tools', 'ts' : new Date()});
+
+    this.state = {'todoList' : todoList};
   }
 
   render() {
@@ -12,8 +20,8 @@ class App extends Component {
       <li class="list-group-item" key={index}>
         <div className="d-flex justify-content-between">
             <div className="d-flex flex-column">
-              <span>Learning React JS with VSCode</span>
-              <span>Again</span>
+              <span>{item.data}</span>
+              <span>{moment(item.ts).format('YYYY-MM-DD HH:mm:ss')}</span>
             </div>
             <span>Remove</span>
         </div>
