@@ -4,12 +4,20 @@ import './App.css';
 class App extends Component {
   constructor(props){
     super(props);
-    this.state = {'todoList' : [1, 2, 3]};
+    this.state = {'todoList' : [1, 2, 3, 4, 5]};
   }
 
   render() {
     const itemList = this.state.todoList.map((item, index)=>
-        <li>1</li>
+      <li class="list-group-item" key={index}>
+        <div className="d-flex justify-content-between">
+            <div className="d-flex flex-column">
+              <span>Learning React JS with VSCode</span>
+              <span>Again</span>
+            </div>
+            <span>Remove</span>
+        </div>
+      </li>
     );
 
     return (
@@ -37,15 +45,7 @@ class App extends Component {
                 <div class="card">
                   <div class="card-header" style={{fontWeight:'bold'}}>Todo List</div>
                   <ul class="list-group list-group-flush">
-                    <li class="list-group-item">
-                      <div className="d-flex justify-content-between">
-                          <div className="d-flex flex-column">
-                            <span>Learning React JS with VSCode</span>
-                            <span>Again</span>
-                          </div>
-                          <span>close</span>
-                      </div>
-                    </li>
+                    {itemList}
                   </ul>
                 </div>
               </div>
