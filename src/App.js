@@ -41,7 +41,7 @@ class App extends Component {
         </nav>
 
         <div className="container-fluid">
-            <div className="row justify-content-center mt-2">
+            <div className="row justify-content-center mt-1">
                 <div className="col-6 rounded">
                     <div class="card">
                       <div class="card-body bg-secondary d-flex justify-content-center align-items-center">
@@ -54,7 +54,7 @@ class App extends Component {
         </div>
 
         <div className="container-fluid">
-            <div className="row justify-content-center mt-4">
+            <div className="row justify-content-center mt-2">
               <div className="col-6">
                 <div class="card">
                   <div class="card-header bg-secondary h4 text-light">Todo List</div>
