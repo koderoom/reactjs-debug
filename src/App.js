@@ -28,9 +28,15 @@ class App extends Component {
                 <div class="card">
                   <div class="card-header" style={{fontWeight:'bold'}}>Todo List</div>
                   <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Cras justo odio</li>
-                    <li class="list-group-item">Dapibus ac facilisis in</li>
-                    <li class="list-group-item">Vestibulum at eros</li>
+                    <li class="list-group-item">
+                      <div className="d-flex justify-content-between">
+                          <div className="d-flex flex-column">
+                            <span>Hello</span>
+                            <span>Again</span>
+                          </div>
+                          <span>World</span>
+                      </div>
+                    </li>
                   </ul>
                 </div>
               </div>
