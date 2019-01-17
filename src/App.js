@@ -19,17 +19,24 @@ class App extends Component {
     todoList.push({'data':'Learn React Native debugging in Chrome Dev Tools', 'ts' : new Date()});
 
     this.state = {'title':title, 'todoList' : todoList};
+    
+    // Event binding
+    this.addNewTodo = this.addNewTodo.bind(this);
+  }
+
+  addNewTodo() {
+    console.log(moment().toDate());
   }
 
   render() {
     const itemList = this.state.todoList.map((item, index)=>
-      <li class="list-group-item" key={index}>
+      <li className="list-group-item" key={index}>
         <div className="d-flex justify-content-between">
             <div className="d-flex flex-column">
               <span>{item.data}</span>
               <span style={{fontSize:'x-small'}}>{moment(item.ts).format('YYYY-MM-DD HH:mm:ss')}</span>
             </div>
-            <FontAwesomeIcon icon={faTrashAlt} size="lg" color='red' style={{opacity:'.7'}}/>
+            <FontAwesomeIcon icon={faTrashAlt} size="lg" color='red' style={{opacity:'.7', cursor:'pointer'}}/>
         </div>
       </li>
     );
@@ -43,10 +50,10 @@ class App extends Component {
         <div className="container-fluid">
             <div className="row justify-content-center mt-1">
                 <div className="col-6 rounded">
-                    <div class="card">
-                      <div class="card-body bg-secondary d-flex justify-content-center align-items-center">
-                          <input class="form-control form-control-lg col-9 mr-1" type="text" placeholder="Add New Todo" />
-                          <button type="button" class="btn btn-lg btn-secondary ">Add Todo</button>
+                    <div className="card">
+                      <div className="card-body bg-secondary d-flex justify-content-center align-items-center">
+                          <input className="form-control form-control-lg col-9 mr-1" type="text" placeholder="Add New Todo" />
+                          <button type="button" className="btn btn-lg btn-secondary" onClick={this.addNewTodo}>Add Todo</button>
                       </div>
                     </div>
                 </div>
@@ -54,11 +61,11 @@ class App extends Component {
         </div>
 
         <div className="container-fluid">
-            <div className="row justify-content-center mt-2">
+            <div className="row justify-content-center mt-1">
               <div className="col-6">
-                <div class="card">
-                  <div class="card-header bg-secondary h4 text-light">Todo List</div>
-                  <ul class="list-group list-group-flush">
+                <div className="card">
+                  <div className="card-header bg-secondary h4 text-light">Todo List</div>
+                  <ul className="list-group list-group-flush">
                     {itemList}
                   </ul>
                 </div>
