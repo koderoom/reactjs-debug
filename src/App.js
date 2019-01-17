@@ -21,7 +21,7 @@ class App extends Component {
         <div className="d-flex justify-content-between">
             <div className="d-flex flex-column">
               <span>{item.data}</span>
-              <span>{moment(item.ts).format('YYYY-MM-DD HH:mm:ss')}</span>
+              <span style={{fontSize:'x-small'}}>{moment(item.ts).format('YYYY-MM-DD HH:mm:ss')}</span>
             </div>
             <span>Remove</span>
         </div>
@@ -51,7 +51,7 @@ class App extends Component {
             <div className="row justify-content-center mt-4">
               <div className="col-6">
                 <div class="card">
-                  <div class="card-header" style={{fontWeight:'bold'}}>Todo List</div>
+                  <div class="card-header h4 text-secondary">Todo List</div>
                   <ul class="list-group list-group-flush">
                     {itemList}
                   </ul>
@@ -64,8 +64,5 @@ class App extends Component {
     );
   }
 }
-
-
-
 
 export default App;
