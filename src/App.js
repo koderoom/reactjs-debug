@@ -62,19 +62,21 @@ class App extends Component {
    */
   render() {
     const itemList = this.state.todoList.map((item, index)=>
-      <li className="list-group-item" key={index}>
-        <div className="d-flex justify-content-between">
-            <div className="d-flex flex-column">
-              <span className='text-capitalize'>{item.data}</span>
-              <span style={{fontSize:'x-small'}}>{moment(item.ts).format('YYYY-MM-DD HH:mm:ss')}</span>
-            </div>
-            <FontAwesomeIcon onClick={()=>{this.removeTodo(index)}} icon={faTrashAlt} size="lg" color='red' style={{opacity:'.7', cursor:'pointer'}}/>
-        </div>
-      </li>
+        <li className="list-group-item" key={index}>
+          <div className="d-flex justify-content-between">
+              <div className="d-flex flex-column">
+                <span className='text-capitalize'>{item.data}</span>
+                <span style={{fontSize:'x-small'}}>{moment(item.ts).format('YYYY-MM-DD HH:mm:ss')}</span>
+              </div>
+              <FontAwesomeIcon onClick={()=>{this.removeTodo(index)}} icon={faTrashAlt} size="lg" color='red' style={{opacity:'.7', cursor:'pointer'}}/>
+          </div>
+        </li>
     );
 
     return (
       <React.Fragment>
+        
+        {/* UI ELEMENT NAVBAR HEADER */}
         <nav className="navbar navbar-dark bg-dark">
           <div>
             <FontAwesomeIcon icon={faReact} size="lg" color="white" className="slow-spin" />
@@ -82,6 +84,7 @@ class App extends Component {
           </div>
         </nav>
 
+        {/** UI Elemnent NewTodo */}
         <div className="container-fluid">
             <div className="row justify-content-center mt-1">
                 <div className="col-6 rounded">
@@ -95,6 +98,7 @@ class App extends Component {
             </div>
         </div>
 
+        {/** UI ELEMENT LIST */}
         <div className="container-fluid">
             <div className="row justify-content-center mt-1">
               <div className="col-6">
@@ -108,6 +112,7 @@ class App extends Component {
             </div>
         </div>
 
+        {/**UI ELEMENT FOOTER */}
         <nav className="navbar navbar-dark bg-dark justify-content-center text-light fixed-bottom">
             Made with Love <span className="ml-1"> &hearts;</span>
         </nav>
