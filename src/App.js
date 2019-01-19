@@ -17,7 +17,7 @@ class App extends Component {
     todoList.push({'data':'Learn React JS debugging in VSCode Editor', 'ts' : new Date()});
     todoList.push({'data':'Learn React JS debugging in Chrome Dev Tools', 'ts' : new Date()});
     todoList.push({'data':'Learn React Native debugging in VSCode Editor', 'ts' : new Date()});
-    todoList.push({'data':'Learn React Native debugging in Chrome Dev Tools', 'ts' : new Date()});
+    todoList.push({'data':'Learn React Native debugging in Chrome Dev Tool', 'ts' : new Date()});
 
     this.state = {'title':title, 'todoList' : todoList, 'newTodo':''};
     
